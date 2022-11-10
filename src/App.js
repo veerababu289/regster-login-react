@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, {useState} from 'react'
+import Register from './Register'
+import Login from './Login'
+import  './App.css'
+ const App = () => {
+const [form,setForm] = useState('Register')
+function reg()
+{
+  setForm('Register')
+  }
+function log (){
+  setForm('Login')
 }
-
+return (
+<div className= "app">
+    {
+      form === 'Login'? <center><div> <Login/> <button  onClick = {reg}>Register</button></div>Don't have an account Register Here</center> 
+      : <center> <div><Register/><button  onClick = {log}>Login</button></div> Have an account Login Here</center>}
+      <center>
+     
+      </center>
+</div>
+  )
+ }
 export default App;
